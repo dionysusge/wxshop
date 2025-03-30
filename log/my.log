@@ -1,0 +1,31 @@
+2025-03-29 00:18:22.934  INFO 27068 --- [main] com.javaclimb.WxshopbackApplication      : Starting WxshopbackApplication using Java 21.0.4 on Dionysus with PID 27068 (F:\A_wechat_code\wxshop\wxshopback\target\classes started by 15464 in F:\A_wechat_code\wxshop\wxshopback)
+2025-03-29 00:18:22.938  INFO 27068 --- [main] com.javaclimb.WxshopbackApplication      : No active profile set, falling back to 1 default profile: "default"
+2025-03-29 00:18:23.578  WARN 27068 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.javaclimb]' package. Please check your configuration.
+2025-03-29 00:18:23.920  INFO 27068 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2025-03-29 00:18:23.933  INFO 27068 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-29 00:18:23.933  INFO 27068 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.62]
+2025-03-29 00:18:24.014  INFO 27068 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-29 00:18:24.014  INFO 27068 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1027 ms
+2025-03-29 00:18:24.152  INFO 27068 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2025-03-29 00:18:24.272  INFO 27068 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2025-03-29 00:18:25.188  WARN 27068 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8888 is already in use
+2025-03-29 00:18:25.191  INFO 27068 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2025-03-29 00:18:25.193  INFO 27068 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2025-03-29 00:18:25.195  INFO 27068 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-03-29 00:18:25.218  INFO 27068 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2025-03-29 00:18:25.237 ERROR 27068 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8888 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8888 or configure this application to listen on another port.
+

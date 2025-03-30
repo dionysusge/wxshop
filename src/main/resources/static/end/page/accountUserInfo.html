@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后台管理系统</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../css/font-awesome.css" rel="stylesheet">
+    <link href="../css/basic.css" rel="stylesheet">
+    <link href="../css/custom.css" rel="stylesheet">
+    <link href="../css/my.css" rel="stylesheet">
+    <link href="../css/element/index.css" rel="stylesheet">
+
+    <style>
+        [v-cloak]{
+            display: none; <!-- 防止页面抖动 -->
+        }
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <nav class="navbar navbar-default navbar-cls-top" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">后台管理系统</a>
+        </div>
+        <div class="header-right">
+            <a href="javascript:void(0)" class="btn btn-info" @click="logout()" title="退出登录">
+                <i class="fa fa-sign-out" style="font-size: 32px;"></i>
+            </a>
+        </div>
+        <div class="header-right">
+            <a href="accountUserInfo.html" class="btn btn-info" title="进入个人信息页面">
+                <i class="fa fa-user fa-2x"></i>
+            </a>
+        </div>
+        <div class="header-right" style="padding-top: 25px">
+            <!--这里检测不到nickName是因为先开始没有给命名，当登录成功后才从localStorage获取的-->
+            欢迎您，{{user.nickName}}
+        </div>
+    </nav>
+    <nav class="navbar-default navbar-side">
+        <div class="sidebar-collapse">
+            <ul class="nav" id="main-menu">
+                <li>
+                    <a class="active-menu" href="index.html">
+                        <i class="fa fa-dashboard">  系统首页</i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-area-chart">  信息展示</i><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse in">
+                        <li><a href="userInfo.html"><i class="fa fa-table">  用户信息</i></a></li>
+                        <li><a href="annoucementInfo.html"><i class="fa fa-table">  公告信息</i></a></li>
+                        <li><a href="goodsTypeInfo.html"><i class="fa fa-table">  商品类别</i></a></li>
+                        <li><a href="goodsInfo.html"><i class="fa fa-table">  商品详情</i></a></li>
+                        <li><a href="orderInfo.html"><i class="fa fa-table">  订单信息</i></a></li>
+                        <li><a href="cartInfo.html"><i class="fa fa-table">  购物车信息</i></a></li>
+                        <li><a href="commentInfo.html"><i class="fa fa-table">  评论信息</i></a></li>
+                    </ul>
+                </li>
+                <li><a href="accountUserInfo.html"><i class="fa fa-table">  个人信息</i></a></li>
+                <li><a href="updatePassword.html"><i class="fa fa-unlock-alt">  修改密码</i></a></li>
+                <li><a href="javascript:void(0)" @click="logout"><i class="fa fa-power-off">  退出登录</i></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="page-wrapper">
+        <div id="page-inner">
+
+        </div>
+    </div>
+</div>
+<script src="../js/jquery-1.10.2.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/jquery.metisMenu.js"></script>
+<script src="../js/custom.js"></script>
+<script src="../js/my.js"></script>
+<script src="../js/vue2.6.11/vue.min.js"></script>
+<script src="../js/vue2.6.11/axios.js"></script>
+<script src="../js/echarts.min.js"></script>
+<script src="../js/element/index.js"></script>
+
+<script>
+    new Vue({
+        el:"#wrapper",
+        data:{
+            user:{
+            }
+        },
+        created:function (){
+            this.user = JSON.parse(localStorage.getItem('user'))
+        },
+        methods:{
+            logout(){
+                logout();
+            }
+        }
+    });
+</script>
+</body>
+</html>
